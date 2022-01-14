@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+    <style>
+       *{
+           margin: auto;
+           padding: 0px;
+           width: 450px;
+           
+           background: lightgrey;
+       } 
+       h1{
+           text-align: left;
+       }
+       body{
+            background-size:200%;
+        }
+        div{
+            margin-left: 1cm;
+        }
+        [type="submit"] {
+            clear: left;
+            width: 150px;
+            margin: 10px 0 0 2px;
+            font-size: 18px;
+        }
+        #submit:hover{
+            background-color:lightsalmon
+        }
+        label{
+            text-emphasis-color: red;
+        }
+        .next{
+            padding-top: 20px;
+        }
+        .back{
+            padding-top: 20px;
+            
+        }
+    </style>
+
+</head>
+<body>
+    <form name="registration" onsubmit="return validation();">
+    <div> <h1> Travel Form </h1> </div>
+    <br>
+    <div> 
+    <label>Name :
+     <input type="text" name="name" id="name"> 
+    </div>
+</label>
+    <br>
+    <div>
+    <label>
+    E-Mail :<input type="email" name="email" id="email" >
+    </div>
+</label>
+    <br>
+    
+    <div>
+    <label>
+    Address :<input type="text" name="address" id="address">
+</label>    
+</div>
+    <br>
+    <div>
+    <label>
+    Pincode :<input type="number" name="pincode" id="pincode">
+</label>    
+</div>
+    <br>
+    <div>
+    <label>
+    Phone No. :<input type="number" name="phone no." id="phone no.">
+</label>    
+</div>   
+    <br>
+    <br>
+    <div>
+    <label>
+    <input type="submit" name="submit" id="submit">
+</label>    
+</div>
+<div class="back">
+    <button>
+        <a href="http://127.0.0.1:5500/ss.html">Back</a>
+    </button>
+</div>
+<div class="next">
+    <button>
+        <a href="http://127.0.0.1:5500/contact.html">Next</a>
+    </button>
+</div>
+
+<script type="text/javascript">
+    function validation()
+    {
+        chkname();
+        chkmail();
+        chkphone();
+        chkadd();
+        chkpin();
+    }
+        function chkphone(){
+        var phone=document.getElementById("phone no.").value;
+        if(phone.length<10 || phone.length>10)
+            {
+                alert("Incorrect phone number!");
+            }
+            if(phone==null)
+            alert("Please enter phone number!");
+    }
+    function chkpin(){
+        var pincode=document.getElementById("pincode").value;
+        
+        if(pincode.length<6 || pincode.length>6)
+            {
+                alert("Please enter correct pincode! ");
+            }
+            if(pincode==null)
+            alert("Please enter pincode!");
+    }
+    function chkname()
+    {
+        var name=document.getElementById("name").value;
+        if(name=="")
+        alert("Pleaser Enter name!");
+    }
+    function chkmail(){
+        var mail=document.getElementById("email").value; 
+        if(mail=="")
+        alert("Please Enter mail address!");
+    }
+    function chkadd(){
+        var add=document.getElementById("address").value;
+        if(add=="")
+        alert("Please enter address!");
+    }
+    </script>
+</body>
+</html>
